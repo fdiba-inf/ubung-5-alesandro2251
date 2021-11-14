@@ -8,9 +8,9 @@ public class UniqueNumbers {
         Scanner input = new Scanner(System.in);
 
         System.out.print("Enter number count: ");
-        int numberCount = input.nextInt();
+        int size = input.nextInt();
 
-        int[] numbers = new int[numberCount];
+        int[] numbers = new int[size];
 
         System.out.println("Enter numbers: ");
         for (int index = 0; index < numbers.length; index++) {
@@ -18,7 +18,17 @@ public class UniqueNumbers {
         }
 
         int[] uniqueNumbers = new int[numbers.length];
-        // Find unique numbers in numbers
+
+        for (int i = 1; i < numbers.length; i++) {
+          for (int j = 0; j < uniqueNumbers.length; j++) {
+            if (uniqueNumbers[j] == numbers[i]) {
+              break;
+            } else if (uniqueNumbers[j] == 0) {
+              uniqueNumbers[j] = numbers[i];
+              break;
+            }
+          }
+        }
 
         String uniqueNumbersAsString = Arrays.toString(uniqueNumbers);
         System.out.println("Unique numbers: " + uniqueNumbersAsString);

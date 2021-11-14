@@ -1,6 +1,7 @@
 package exercise5;
 
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Search {
   public static void main(String[] args) {
@@ -29,7 +30,7 @@ public class Search {
                 uniqueNumbers[j] = numbers[i];
                 break;
             }
-            }
+          }
         }
 
         String uniqueNumbersAsString = Arrays.toString(uniqueNumbers);
