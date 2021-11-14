@@ -17,24 +17,17 @@ public class Search {
         for (int i = 0; i < size; i++) {
             numbers[i] = input.nextInt();
         }
+        System.out.print("Search for number: ");
+        int number = input.nextInt();
 
-        int[] uniqueNumbers = new int[size];
+        int numberIndex = -1;
 
-        uniqueNumbers[0]=numbers[0];
-
-        for(int i = 1; i < size;i++){
-            for(int j= 0; j<size; j++){
-            if(uniqueNumbers[j] == numbers[i]) {
-                break;
-            }else if(uniqueNumbers[j]==0){
-                uniqueNumbers[j] = numbers[i];
-                break;
-            }
+        for (int i = 0; i < numbers.length; i++) {
+          if (numbers[i] == number) {
+            numberIndex = i;
           }
         }
-
-        String uniqueNumbersAsString = Arrays.toString(uniqueNumbers);
-        System.out.println("Unique numbers: " + uniqueNumbersAsString);
+        System.out.println("Number index: " + numberIndex);
 
 
 
