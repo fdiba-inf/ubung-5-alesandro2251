@@ -3,25 +3,41 @@ package exercise5;
 import java.util.Scanner;
 
 public class Search {
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+  public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
 
         System.out.print("Enter number count: ");
-        int numberCount = input.nextInt();
+        int size = input.nextInt();
 
-        int[] numbers = new int[numberCount];
+        int[] numbers = new int[size];
+
 
         System.out.println("Enter numbers: ");
-        for (int index = 0; index < numbers.length; index++) {
-            numbers[index] = input.nextInt();
+        for (int i = 0; i < size; i++) {
+            numbers[i] = input.nextInt();
         }
 
-        System.out.print("Search for number: ");
-        int number = input.nextInt();
+        int[] uniqueNumbers = new int[size];
 
-        int numberIndex = -1;
-        // Search for number in numbers
+        uniqueNumbers[0]=numbers[0];
 
-        System.out.println("Number index: " + numberIndex);
+        for(int i = 1; i < size;i++){
+            for(int j= 0; j<size; j++){
+            if(uniqueNumbers[j] == numbers[i]) {
+                break;
+            }else if(uniqueNumbers[j]==0){
+                uniqueNumbers[j] = numbers[i];
+                break;
+            }
+            }
+        }
+
+        String uniqueNumbersAsString = Arrays.toString(uniqueNumbers);
+        System.out.println("Unique numbers: " + uniqueNumbersAsString);
+
+
+
+
+        }
+
     }
-}
