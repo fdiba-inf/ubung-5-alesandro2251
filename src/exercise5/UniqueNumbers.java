@@ -16,11 +16,10 @@ public class UniqueNumbers {
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = input.nextInt();
         }
-
-        int[] uniqueNumbers = new int[numbers.length];
+      int[] uniqueNumbers = new int[numbers.length];
         
         uniqueNumbers[0] = numbers[0];
-        
+
         for (int i = 1; i < numbers.length; i++) {
           for (int j = 0; j < uniqueNumbers.length; j++) {
             if (uniqueNumbers[j] == numbers[i]) {
